@@ -1,17 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TheHeader/>
+    <div class="container">
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <TimerCard/>
+        </div>
+        <div class="col-md-6">
+          <TimerList/>
+        </div>        
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TimerCard from './components/TimerCard.vue'
+import TheHeader from './components/TheHeader.vue'
+import TimerList from './components/TimerList.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    TheHeader,
+    TimerCard,
+    TimerList
+  },
+  data () {
+    return {
+      name: '',
+      time: ''
+    }
   }
 }
 </script>
@@ -24,5 +43,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.nav-link {
+    cursor: pointer;
 }
 </style>

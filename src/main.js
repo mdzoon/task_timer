@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
+import Bootstrap from 'bootstrap/dist/css/bootstrap.min.css'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true
+
+Vue.use(Bootstrap)
 
 new Vue({
   store,
