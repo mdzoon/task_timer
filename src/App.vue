@@ -8,7 +8,7 @@
         </div>
         <div class="col-md-6">
           <TimerList/>
-        </div>        
+        </div>
       </div>
     </div>
   </div>
