@@ -46,8 +46,14 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button type="button" class="btn btn-primary btn-lg m-1" @click="createNewTask">Create</button>
-                <button type="button" class="btn btn-secondary btn-lg m-1" @click="clearForm">Clear</button>
+                <button type="button" class="btn btn-primary btn-lg m-1" @click="createNewTask">
+                    Create
+                    <img src="@/assets/add_alarm-24px.svg" aria-hidden="true" />
+                </button>
+                <button type="button" class="btn btn-secondary btn-lg m-1" @click="clearForm">
+                    Clear
+                    <img src="@/assets/clear-24px.svg" aria-hidden="true" />
+                </button>
             </div>
         </slot>
     </div>

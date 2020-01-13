@@ -12,10 +12,13 @@
         </h1>
       </div>
       <div class="card-footer">
-        <button type="button" class="btn btn-primary btn-lg m-1" @click="startCounter">Start</button>
+        <button type="button" class="btn btn-primary btn-lg m-1" @click="startCounter">
+          Start
+          <img src="@/assets/alarm_on-24px.svg" aria-hidden="true" />
+        </button>
         <button type="button" class="btn btn-secondary btn-lg m-1" @click="saveTask">
           Save
-          <img src="../../assets/keyboard_arrow_right-24px.svg" aria-hidden="true" />
+          <img src="@/assets/done-24px.svg" aria-hidden="true" />
         </button>
       </div>
     </slot>
