@@ -1,7 +1,7 @@
 <template>
-    <div id="list-example" class="list-group">
-        <ListItem v-for="item in items" :key="item.id" :item="item"/>
-    </div>
+  <div id="list-example" class="list-group">
+    <ListItem v-for="task in tasks" :key=task.name :task="task" />
+  </div>
 </template>
 
 <script>
@@ -12,22 +12,12 @@ export default {
   components: {
     ListItem
   },
-  data () {
-    return {
-      items: [
-        {
-          id: 1,
-          name: 'Do the dishes'
-        },
-        {
-          id: 2,
-          name: 'Take out the trash'
-        },
-        {
-          id: 3,
-          name: 'Mow the lawn'
-        }
-      ]
+  props: {
+    tasks: Array
+  },
+  watchers: {
+    addTask () {
+      return this.$store.getters.getTasks
     }
   }
 }

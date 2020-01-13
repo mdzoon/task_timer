@@ -2,19 +2,20 @@
   <div>
     <slot>
       <div class="card-body">
-        <h5 class="card-title">Task name: {{ task.taskName }}</h5>
+        <p>Task name: </p>
+        <h3 class="card-title">{{ task.name }}</h3>
         <p>Deadline:</p>
-        <h3>{{ task.deadline }}</h3>
+        <h5>{{task.date}} {{task.time}}</h5>
         <p>Time left:</p>
         <h1 class="card-text">
-          {{ timeLeft.days }}:{{ timeLeft.hours }}:{{ timeLeft.minutes }}:{{ timeLeft.seconds }}
+          {{task.timeLeft.days}}:{{task.timeLeft.hours}}:{{task.timeLeft.minutes}}
         </h1>
       </div>
       <div class="card-footer">
         <button type="button" class="btn btn-primary btn-lg m-1" @click="startCounter">Start</button>
-        <button type="button" class="btn btn-secondary btn-lg m-1">
-          Hide
-          <span class="oi oi-chevron-right" title="chevron right" aria-hidden="true"></span>
+        <button type="button" class="btn btn-secondary btn-lg m-1" @click="saveTask">
+          Save
+          <img src="../../assets/keyboard_arrow_right-24px.svg" aria-hidden="true" />
         </button>
       </div>
     </slot>
@@ -25,9 +26,27 @@
 
 export default {
   name: 'TimerCardDisplay',
-  methods: {
+  props: {
+    task: Object
   },
-  computed: {
+  methods: {
+    startCounter () {
+      // TODO
+    },
+    saveTask () {
+      const task = {
+        name: this.task.name,
+        date: this.task.date,
+        time: this.task.time
+      }
+      console.log(task)
+      this.$store.state.tasks = task
+    }
+  },
+  watchers: {
+    getTask () {
+      return this.$store.getters.getTask
+    }
   }
 }
 </script>

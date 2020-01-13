@@ -10,7 +10,7 @@
 export default {
   name: 'ListItem',
   props: {
-    item: Object
+    task: Object
   }
 }
 </script>

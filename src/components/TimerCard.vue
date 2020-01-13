@@ -23,7 +23,7 @@
             </li>
           </ul>
         </div>
-          <component class="pt-5" :is="selectedComponent">
+          <component class="pt-5" :is="selectedComponent" :task="task">
             <slot></slot>
           </component>
       </div>
@@ -43,8 +43,17 @@ export default {
   data () {
     return {
       selectedComponent: TimerCardDisplay,
-      currentTab: 'activeTask'
-
+      currentTab: 'activeTask',
+      task: {
+        name: 'Add task name',
+        time: 'and time',
+        date: 'Add date',
+        timeLeft: {
+          days: '00',
+          hours: '00',
+          minutes: '00'
+        }
+      }
     }
   }
 }

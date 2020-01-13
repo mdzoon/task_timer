@@ -8,7 +8,7 @@
                         type="text"
                         placeholder="Task Name"
                         required
-                        v-model="taskName"
+                        v-model="task.name"
                     >
                 </h5>
                 <div class="container">
@@ -22,9 +22,9 @@
                                     type="date"
                                     name="date"
                                     id="date"
-                                    :min="today"
+                                    :min="task.date"
                                     required
-                                    v-model="today"
+                                    v-model="task.date"
                                 >
                             </div>
 
@@ -38,7 +38,7 @@
                                     name="time"
                                     id="time"
                                     required
-                                    v-model="time"
+                                    v-model="task.time"
                                 >
                             </div>
                         </div>
@@ -57,27 +57,23 @@
 
 export default {
   name: 'TimerCardForm',
-  data () {
-    return {
-      taskName: '',
-      today: '',
-      time: ''
-    }
+  props: {
+    task: Object
   },
   methods: {
     createNewTask () {
-      const deadline = new Date(this.today + 'T' + this.time + ':00')
       const task = {
-        taskName: this.taskName,
-        deadline: deadline.getTime()
+        name: this.task.name,
+        date: this.task.date,
+        time: this.task.time
       }
       console.log(task)
-      this.$store.state.task = task
+      this.$store.state.tasks = task
     },
     clearForm () {
-      this.taskName = ''
-      this.today = ''
-      this.time = ''
+      this.task.name = ''
+      this.task.date = ''
+      this.task.time = ''
     }
   }
 }
