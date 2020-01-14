@@ -45,9 +45,9 @@ export default {
       selectedComponent: TimerCardDisplay,
       currentTab: 'activeTask',
       task: {
-        name: 'Add task name',
-        time: 'and time',
-        date: 'Add date',
+        name: 'No active task',
+        time: ' set',
+        date: 'No deadline',
         timeLeft: {
           days: '00',
           hours: '00',

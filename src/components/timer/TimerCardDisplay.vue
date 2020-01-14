@@ -48,7 +48,7 @@ export default {
   },
   watchers: {
     getTask () {
-      return this.$store.getters.getTask
+      // return this.$store.getters.getTask
     }
   }
 }

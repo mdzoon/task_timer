@@ -25,12 +25,6 @@ export default {
     TheHeader,
     TimerCard,
     TimerList
-  },
-  data () {
-    return {
-      name: '',
-      time: ''
-    }
   }
 }
 </script>
